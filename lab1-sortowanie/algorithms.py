@@ -9,7 +9,6 @@ def selection_sort(array):
         temp = array[i] 
         array[i] = array[lowest]
         array[lowest] = temp
-        print(array)
 
     return array
 
