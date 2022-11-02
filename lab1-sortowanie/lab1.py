@@ -19,5 +19,8 @@ def get_N_words_from_file(filename, N):
 
 
 arr = get_N_words_from_file('pan-tadeusz.txt', 50)
+
+
+quickSort(arr, 0, len(arr)-1)
 print(arr)
 
