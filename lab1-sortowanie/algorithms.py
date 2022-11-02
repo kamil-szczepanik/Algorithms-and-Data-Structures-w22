@@ -3,7 +3,7 @@ def selection_sort(array):
     for i in range(len(array)):
         lowest = i
         for j in range(i+1, len(array)):
-            if len(array[lowest])>len(array[j]):
+            if array[lowest]>array[j]:
                 lowest = j
 
         temp = array[i] 
@@ -24,7 +24,7 @@ def merge_sort(array):
         j = 0
         k = 0
         while i < len(left_array) and j < len(right_array):
-            if len(left_array[i]) < len(right_array[j]):
+            if left_array[i] < right_array[j]:
                 array[k] = left_array[i]
                 i += 1
             else:
@@ -48,7 +48,7 @@ def bubbleSort(arr):
     swapped = False
     for i in range(n-1):
         for j in range(0, n-i-1):
-            if len(arr[j]) > len(arr[j + 1]):
+            if arr[j] > arr[j + 1]:
                 swapped = True
                 arr[j], arr[j + 1] = arr[j + 1], arr[j]
         if not swapped:
@@ -58,7 +58,7 @@ def partition(array, low, high):
     pivot = array[high] 
     i = low - 1
     for j in range(low, high):
-        if len(array[j]) <= len(pivot):
+        if array[j] <= pivot:
             i = i + 1
             (array[i], array[j]) = (array[j], array[i])
     (array[i + 1], array[high]) = (array[high], array[i + 1])
