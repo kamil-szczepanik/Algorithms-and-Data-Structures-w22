@@ -11,9 +11,10 @@ def get_N_words_from_file(filename, N):
         index = 0
         for line in file:
             for word in line.split():
-                array[index] = word#''.join([i for i in word if i.isalpha()])
-                index += 1
-                if index +1 == N:
+                array[index] = ''.join([i for i in word if i.isalpha()])
+                if array[index] != '':
+                    index += 1
+                if index == N:
                     return array
 
 
