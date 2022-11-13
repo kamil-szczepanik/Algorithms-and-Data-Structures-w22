@@ -1,22 +1,18 @@
 def transform_polish(letter):
-  match letter:
-    case "ą":
-      return "a"
-    case "ę":
-      return "e"
-    case "ó":
-      return "o"
-    case "ć":
-      return "c"
-    case "ł":
-      return "l"
-    case "ś":
-      return "s"
-    case "ź":
-      return "z"
-    case "ż":
-      return "z"
-    case _:
+  letter_dict = {
+    "ą": "a",
+    "ć": "c",
+    "ę": "e",
+    "ł": "l",
+    "ń": "n",
+    "ó": "o",
+    "ś": "s",
+    "ź": "z",
+    "ż": "z",
+  }
+  if letter in letter_dict:
+      return letter_dict[letter]
+  else:
       return letter
 
 def get_N_words_from_file(filename, N):

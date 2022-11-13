@@ -16,8 +16,8 @@ for i in range(1,5):
   print(i)
   wynikiTemp = []
   for n in N:
-    start = time.process_time() # pobierz aktualny czas
     arr = get_N_words_from_file('pan-tadeusz.txt', n)
+    start = time.process_time() # pobierz aktualny czas
     if(i==1):
       bubbleSort(arr)
     elif(i==2):
