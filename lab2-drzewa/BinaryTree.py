@@ -155,20 +155,20 @@ class AVL(BST):
         root = super()._insert(root, data)
 
         balance = self.get_balance(root)
-    
-        if balance > 1 and data < root.left.data:
-            return self.right_rotation(root)
 
-        if balance < -1 and data > root.right.data:
-            return self.left_rotation(root)
+        if balance > 1:
+            if self.get_balance(root.left) >= 0:
+                return self.right_rotation(root)
+            else:
+                root.left = self.left_rotation(root.left)
+                return self.right_rotation(root)
 
-        if balance > 1 and data > root.left.data:
-            root.left = self.left_rotation(root.left)
-            return self.right_rotation(root)
-
-        if balance < -1 and data < root.right.data:
-            root.right = self.right_rotation(root.right)
-            return self.left_rotation(root)
+        if balance < -1:
+            if self.get_balance(root.right) <= 0:
+                return self.left_rotation(root)
+            else:
+                root.right = self.right_rotation(root.right)
+                return self.left_rotation(root)
 
         return root
 
@@ -177,7 +177,6 @@ class AVL(BST):
 
     def _delete(self, root, data):
         root = super()._delete(root, data)
-
 
         balance = self.get_balance(root)
 
@@ -240,24 +239,24 @@ if __name__ == '__main__':
         avl_tree.insert(intTemp)
 
 
-    print("BST: \n")
-    bst_tree.root.display()
-    print('to be deleted: ', x)
-    print("Searching: ", x, " - result: ", bool(bst_tree.search(x)))
-    print("Searching: ", 1111, " - result: ", bool(bst_tree.search(1111)))
-    bst_tree.delete(x)
-    print('height: ', bst_tree.get_height(bst_tree.root))
-    bst_tree.root.display()
+    # print("BST: \n")
+    # bst_tree.root.display()
+    # print('to be deleted: ', x)
+    # print("Searching: ", x, " - result: ", bool(bst_tree.search(x)))
+    # print("Searching: ", 1111, " - result: ", bool(bst_tree.search(1111)))
+    # bst_tree.delete(x)
+    # print('height: ', bst_tree.get_height(bst_tree.root))
+    # bst_tree.root.display()
 
     print("==================\nAVL: \n")
-    avl_tree.root.display()
+    # avl_tree.root.display()
     print("Searching: ", x, " - result: ", bool(avl_tree.search(x)))
     print("Searching: ", 1111, " - result: ", bool(avl_tree.search(1111)))
     print('to be deleted: ', x)
     avl_tree.delete(x)
     print('height: ', avl_tree.get_height(avl_tree.root))
     print('balance: ', avl_tree.get_balance(avl_tree.root))
-    avl_tree.root.display()
+    # avl_tree.root.display()
 
 
     avl_tree.root.PrintTree()
