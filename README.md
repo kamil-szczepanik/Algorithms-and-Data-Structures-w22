@@ -8,3 +8,9 @@
 ## Sortowanie
 
 [Sprawozdanie](/lab1-sortowanie/sprawozdanie.pdf)
+
+## Drzewa
+
+[Sprawozdanie](/lab1-sortowanie/sprawozdanie.md)
+
+
