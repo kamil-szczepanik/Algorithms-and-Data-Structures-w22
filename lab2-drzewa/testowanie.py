@@ -7,8 +7,8 @@ import sys
 import random
 sys.setrecursionlimit(10000)
 random_num_list = [random.randint(0, 30000) for i in range(10000)]
-N_list = [i*1000 for i in range(1, 11)]
-print(N_list)
+N_list = [i*250 for i in range(1,41)]
+# print(N_list)
 
 creating_tree_results = []
 searching_tree_results = []
@@ -59,55 +59,25 @@ plt.plot(N_list,creating_tree_results[1],label='AVL')
 plt.legend()
 plt.xlabel("Długość listy")
 plt.ylabel("Czas tworzenia")
-plt.show()
-# plt.savefig("wykres1.png")
+# plt.show()
+plt.savefig("tworzenie.png")
+plt.close()
+
 
 plt.plot(N_list,searching_tree_results[0],label='BST')
 plt.plot(N_list,searching_tree_results[1],label='AVL')
 plt.legend()
 plt.xlabel("Długość listy")
 plt.ylabel("Czas szukania")
-plt.show()
+# plt.show()
+plt.savefig("szukanie.png")
+plt.close()
 
 plt.plot(N_list,deleting_tree_results[0],label='BST')
 plt.plot(N_list,deleting_tree_results[1],label='AVL')
 plt.legend()
 plt.xlabel("Długość listy")
 plt.ylabel("Czas usuwania")
-plt.show()
-
-# f = plt.figure()
-# f.set_figwidth(16)
-# f.set_figheight(12)
-# f.tight_layout(pad=100.0)
-
-# plt.subplot(221)
-# plt.plot(N,Wyniki[0], color="blue")
-# plt.title('Bubble')
-# plt.xlabel("Długość listy")
-# plt.ylabel("Czas sortowania")
-# plt.grid(True)
-
-# plt.subplot(222)
-# plt.plot(N,Wyniki[1], color="orange")
-# plt.title('Selection')
-# plt.xlabel("Długość listy")
-# plt.ylabel("Czas sortowania")
-# plt.grid(True)
-
-# plt.subplot(223)
-# plt.plot(N,Wyniki[2], color="green")
-# plt.title('Merge')
-# plt.xlabel("Długość listy")
-# plt.ylabel("Czas sortowania")
-# plt.grid(True)
-
-# plt.subplot(224)
-# plt.plot(N,Wyniki[3], color="red")
-# plt.title('Quick')
-# plt.xlabel("Długość listy")
-# plt.ylabel("Czas sortowania")
-# plt.grid(True)
-# # plt.show()
-# plt.savefig("wykres2.png")
-# plt.close()
+# plt.show()
+plt.savefig("usuwanie.png")
+plt.close()
