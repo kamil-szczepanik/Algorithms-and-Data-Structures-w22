@@ -11,6 +11,6 @@
 
 ## Drzewa
 
-[Sprawozdanie](/lab1-sortowanie/sprawozdanie.md)
+[Sprawozdanie](/lab1-sortowanie/README.md)
 
 
