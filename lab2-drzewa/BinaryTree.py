@@ -1,4 +1,5 @@
 import random
+import numpy as np
 
 
 class Node:
@@ -7,6 +8,55 @@ class Node:
         self.right = None
         self.data = data
         self.height = 1
+
+    def get_level_order(self, root):
+        h = root.height
+        level_list = []
+        for i in range(1, h+1):
+            level_list.append(self.get_current_level(root, i))
+        return level_list
+    
+    
+    # Print nodes at a current level
+    def get_current_level(self, root, level):
+        if root is None:
+            return 
+        if level == 1:
+            curr_level= root.data
+        elif level > 1:
+            l = self.get_current_level(root.left, level-1)
+            r = self.get_current_level(root.right, level-1)
+            curr_level = l,r
+
+        return curr_level
+
+    def print_tree(self, root):
+        print('------------')
+        level_list = self.get_level_order(root)
+        tree_height = len(level_list)
+        width = np.power(2, tree_height)
+        
+        for i in range(1, len(level_list)+1):
+            print(i)
+            width = width//2
+            indent =  (width-1)*"    "
+            to_print = self.print_level_list("", level_list[i-1], i, width, tree_height, indent)
+            print(to_print)
+            
+
+    def print_level_list(self, text, level_list, dim, width, tree_height, indent):
+        if level_list is None:
+                return indent  +  "____"
+        if dim == 1:
+            if level_list is None:
+                return indent  +  "____"
+            else:
+                return indent  + (4-len(str(level_list)))*" " +str(level_list)
+        else:
+            # if level_list[0] is not None and level_list[1] is not None:
+            text+=  self.print_level_list(text, level_list[0], dim-1, width, tree_height, indent) + indent + "    " + self.print_level_list(text, level_list[1], dim-1, width, tree_height, indent) 
+        return text
+
 
     def display(self):
         lines, *_ = self._display_aux()
@@ -17,7 +67,7 @@ class Node:
         """Returns list of strings, width, height, and horizontal coordinate of the root."""
         # No child.
         if self.right is None and self.left is None:
-            line = '%s' % self.data
+            line = f"{self.data}"
             width = len(line)
             height = 1
             middle = width // 2
@@ -231,7 +281,7 @@ class AVL(BST):
 if __name__ == '__main__':
     bst_tree = BST()
     avl_tree = AVL()
-    for i in range(10):
+    for i in range(8):
         intTemp = random.randint(1,10000)
         if i == 3:
             x = intTemp
@@ -239,13 +289,14 @@ if __name__ == '__main__':
         avl_tree.insert(intTemp)
 
 
-    # print("BST: \n")
+    print("BST: \n")
     # bst_tree.root.display()
-    # print('to be deleted: ', x)
-    # print("Searching: ", x, " - result: ", bool(bst_tree.search(x)))
-    # print("Searching: ", 1111, " - result: ", bool(bst_tree.search(1111)))
-    # bst_tree.delete(x)
-    # print('height: ', bst_tree.get_height(bst_tree.root))
+    bst_tree.root.print_tree(bst_tree.root)
+    print('to be deleted: ', x)
+    print("Searching: ", x, " - result: ", bool(bst_tree.search(x)))
+    print("Searching: ", 1111, " - result: ", bool(bst_tree.search(1111)))
+    bst_tree.delete(x)
+    print('height: ', bst_tree.get_height(bst_tree.root))
     # bst_tree.root.display()
 
     print("==================\nAVL: \n")
@@ -257,6 +308,7 @@ if __name__ == '__main__':
     print('height: ', avl_tree.get_height(avl_tree.root))
     print('balance: ', avl_tree.get_balance(avl_tree.root))
     # avl_tree.root.display()
+    avl_tree.root.print_tree(avl_tree.root)
 
 
-    avl_tree.root.PrintTree()
+    # avl_tree.root.PrintTree()
