@@ -4,6 +4,18 @@ Podział zadań:
 - Mateusz Roszkowski - BST
 - Kamil Szczepanik - AVL
 
+## Wyświetlanie drzewa
+
+W pliku `BinaryTree.py` znajduje się implementacja drzew oraz przykładowe operacje na nim - tworzenie, dodawanie, szukanie, usuwanie oraz wyświetlanie go.
+
+#### Drzewo BST
+![bst](skriny/BST.jpg "Drzewo BST")
+
+
+#### Drzewo AVL
+![bst](skriny/AVL.jpg "Drzewo AVL")
+
+
 ## Wyniki eksperymentów
 
 ### Tworzenie drzew
