@@ -277,17 +277,42 @@ class AVL(BST):
 
         return y
 
+import time
 
 if __name__ == '__main__':
     bst_tree = BST()
     avl_tree = AVL()
-    for i in range(8):
-        intTemp = random.randint(1,10000)
-        if i == 3:
-            x = intTemp
+    
+
+    for i in range(5):
+        intTemp = random.randint(1,1000)            
         bst_tree.insert(intTemp)
         avl_tree.insert(intTemp)
-
+    x = 3
+    bst_tree.insert(x)
+    avl_tree.insert(x)
+    # # avl_tree.insert(19030)
+    # # avl_tree.insert(50000)
+    # # avl_tree.insert(3)
+    # # avl_tree.insert(78213)
+    # # bst_tree.insert(19030)
+    # # bst_tree.insert(50000)
+    # # bst_tree.insert(3)
+    # # bst_tree.insert(78213)
+    # start = time.time()
+    # for _ in range(1000):
+    #   # avl_tree.search(19030)
+    #   # avl_tree.search(50000)
+    #   # avl_tree.search(3)
+    #   # avl_tree.search(78213)
+    #   bst_tree.search(19030)
+    #   bst_tree.search(50000)
+    #   bst_tree.search(3)
+    #   bst_tree.search(78213)
+    # end = time.time()
+    # # print("AVL Tree:")
+    # print("BST Tree:")
+    # print(end - start)
 
     print("BST: \n")
     # bst_tree.root.display()
