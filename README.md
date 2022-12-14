@@ -13,4 +13,8 @@
 
 [Sprawozdanie](/lab2-drzewa/README.md)
 
+## Kopce
+
+[Sprawozdanie](/lab3-kopiec/README.md)
+
 
