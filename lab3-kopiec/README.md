@@ -11,23 +11,23 @@ W pliku `kopiec.py` znajduje się implementacja kopca oraz przykładowe operacje
 W pliku `testowanie.py` znajduje się implementacja testów kopców oraz tworzenia wykresów ich wydajności.
 
 #### Kopiec 2-arny
-![bst](images\2ary_heap.jpg "Kopiec 2-arny")
+![bst](images/2ary_heap.jpg "Kopiec 2-arny")
 
 #### Kopiec 3-arny
-![bst](images\3ary_heap.jpg "Kopiec 3-arny")
+![bst](images/3ary_heap.jpg "Kopiec 3-arny")
 
 #### Kopiec 4-arny
-![bst](images\4ary_heap.jpg "Kopiec 4-arny")
+![bst](images/4ary_heap.jpg "Kopiec 4-arny")
 
 
 
 ## Wyniki eksperymentów
 
 ### Tworzenie kopców
-![plot](images\tworzenie.png "Tworzenie kopców")
+![plot](images/tworzenie.png "Tworzenie kopców")
 
 ### Usuwanie szczytu kopca
-![plot](images\usuwanie.png "Usuwanie szczytu kopca")
+![plot](images/usuwanie.png "Usuwanie szczytu kopca")
 
 
 ### Wnioski:
