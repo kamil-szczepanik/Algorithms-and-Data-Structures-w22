@@ -17,4 +17,8 @@
 
 [Sprawozdanie](/lab3-kopiec/README.md)
 
+## Wyszukiwanie wzorca
+
+[Sprawozdanie](/lab4-wyszukiwanie-wzorca/README.md)
+
 

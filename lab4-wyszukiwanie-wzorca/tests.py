@@ -14,6 +14,7 @@ gc_old = gc.isenabled() # pobierz aktualny stan odśmiecania
 N = [1000, 2000, 3500, 5000, 7500, 10000]
 Wyniki = []
 pat = "podkomorzy"
+# pat = "tylko"
 
 for i in range(1,4):
   gc.disable() # wyłącz odśmiecanie
@@ -39,6 +40,10 @@ plt.plot(N,Wyniki[2],label='KR')
 plt.legend()
 plt.xlabel("Długość listy")
 plt.ylabel("Czas wyszukiwania")
-plt.show()
-# plt.savefig("dluzsze_slowo.png")
+plt.title(f"Wynik wyszukiwania słowa '{pat}'")
+# plt.show()
+if pat == "tylko":
+  plt.savefig("images/krotkie_slowo.png")
+elif pat == "podkomorzy":
+  plt.savefig("images/dluzsze_slowo.png")
 

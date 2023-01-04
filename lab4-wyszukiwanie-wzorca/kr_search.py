@@ -1,4 +1,4 @@
-def kr_search(pat, txt, q):
+def kr_search(pat, txt, q=101):
   M = len(pat)
   N = len(txt)
   p = 0    # hash of pat

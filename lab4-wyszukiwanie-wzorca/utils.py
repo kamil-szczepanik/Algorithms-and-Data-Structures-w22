@@ -30,3 +30,27 @@ def get_N_words_from_file(filename, N):
                 if index == N:
                     return array
 
+
+def get_text_from_file(filename):
+    text = ""
+    with open(filename,'r', encoding='utf8', errors='ignore') as file:
+        
+        while True:
+            
+            # Read from file
+            c = file.read(1)
+            if not c:
+                break
+            
+            if c.isalpha():
+                c = transform_polish(c)
+            text+=c
+
+    return text
+
+
+if __name__=="__main__":
+    # print(get_text_from_file('pan-tadeusz.txt'))
+    pass
+
+
