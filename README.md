@@ -21,4 +21,8 @@
 
 [Sprawozdanie](/lab4-wyszukiwanie-wzorca/README.md)
 
+## Grafy
+
+[Sprawozdanie](/lab5-grafy/README.md)
+
 
